@@ -29,4 +29,8 @@ class MainViewModel @Inject constructor(private val mainRepository: MainReposito
 
     fun getPokemonInfoLiveData() = pokemonInfoLiveData
 
+    fun refresh() {
+        loadTrigger.value = Unit
+    }
+
 }
