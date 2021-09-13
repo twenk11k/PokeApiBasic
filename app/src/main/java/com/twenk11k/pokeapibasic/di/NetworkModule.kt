@@ -1,5 +1,6 @@
 package com.twenk11k.pokeapibasic.di
 
+import com.twenk11k.pokeapibasic.network.PokeService
 import com.twenk11k.pokeapibasic.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -28,5 +29,10 @@ object NetworkModule {
         .baseUrl(BASE_URL)
         .client(okHttpClient)
         .build()
+
+    @Singleton
+    @Provides
+    fun providePokeService(retrofit: Retrofit): PokeService =
+        retrofit.create(PokeService::class.java)
 
 }
