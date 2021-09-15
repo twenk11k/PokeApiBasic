@@ -38,7 +38,8 @@
             app:gone="@{vm.isLoading}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_pokemon" />
+            app:layout_constraintTop_toBottomOf="@id/img_pokemon"
+            tools:text="pikachu" />
 
         <Button
             android:id="@+id/btn_refresh"
