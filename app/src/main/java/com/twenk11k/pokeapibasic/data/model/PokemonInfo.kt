@@ -8,8 +8,8 @@ data class PokemonInfo(
     @Transient var imageUrl: String
 ) {
 
-    fun getHeightString() = String.format("%.1f M", height.toFloat() / 10)
+    fun getFormattedHeight() = String.format("%.1f M", height.toFloat() / 10)
 
-    fun getWeightString() = String.format("%.1f KG", weight.toFloat() / 10)
+    fun getFormattedWeight() = String.format("%.1f KG", weight.toFloat() / 10)
 
 }
