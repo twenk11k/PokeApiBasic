@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,7 +11,7 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:toast="@{vm.toastMessage}"
@@ -45,16 +46,63 @@
             android:id="@+id/rv_types"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default"
             android:orientation="horizontal"
             app:adapterPokemonTypeList="@{vm.pokemonInfoLiveData.types}"
             app:gone="@{vm.isLoading}"
-            android:layout_margin="@dimen/margin_default"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_name"
             tools:itemCount="2"
             tools:listitem="@layout/item_pokemon_type" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@{vm.pokemonInfoLiveData.formattedWeight}"
+            android:textSize="@dimen/text_size_large"
+            app:gone="@{vm.isLoading}"
+            app:layout_constraintEnd_toStartOf="@id/txt_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_types"
+            tools:text="32.0 KG" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.pokemonInfoLiveData.formattedHeight}"
+            android:textSize="@dimen/text_size_large"
+            app:gone="@{vm.isLoading}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_weight"
+            app:layout_constraintTop_toTopOf="@id/txt_weight"
+            tools:text="1.1 M" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_weight_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weight"
+            android:textColor="@color/black"
+            app:gone="@{vm.isLoading}"
+            app:layout_constraintEnd_toStartOf="@id/txt_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_weight" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_height_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/height"
+            android:textColor="@color/black"
+            app:gone="@{vm.isLoading}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_weight"
+            app:layout_constraintTop_toBottomOf="@id/txt_height" />
 
         <Button
             android:id="@+id/btn_refresh"
