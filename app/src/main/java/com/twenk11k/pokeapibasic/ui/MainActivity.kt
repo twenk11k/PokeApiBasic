@@ -22,6 +22,7 @@ class MainActivity : DataBindingActivity() {
         binding.apply {
             vm = mainViewModel
             lifecycleOwner = this@MainActivity
+            rvTypes.adapter = PokemonTypeAdapter()
         }
     }
 
