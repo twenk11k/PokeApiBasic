@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default"
             android:text="@{vm.pokemonInfoLiveData.name}"
-            android:textSize="@dimen/text_size_default"
+            android:textSize="@dimen/text_size_large"
             app:gone="@{vm.isLoading}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
