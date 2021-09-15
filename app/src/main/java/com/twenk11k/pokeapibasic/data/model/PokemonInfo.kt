@@ -6,4 +6,10 @@ data class PokemonInfo(
     val height: String,
     val weight: String,
     @Transient var imageUrl: String
-)
+) {
+
+    fun getHeightString() = String.format("%.1f M", height.toFloat() / 10)
+
+    fun getWeightString() = String.format("%.1f KG", weight.toFloat() / 10)
+
+}
