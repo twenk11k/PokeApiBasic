@@ -23,8 +23,10 @@ class MainRepository @Inject constructor(
         if (pokemonResponse.isSuccessful) {
             pokemonResponse.body()?.results?.let {
                 val randomPokemon = it[Random.nextInt(it.size)]
-                val pokemonInfo = pokeService.fetchPokemonInfo(randomPokemon.name).body()
-                emit(pokemonInfo?.apply { imageUrl = randomPokemon.getImageUrl() })
+                val pokemonInfo = pokeService.fetchPokemonInfo(randomPokemon.name)
+                if (pokemonInfo.isSuccessful) {
+                    emit(pokemonInfo.body()?.apply { imageUrl = randomPokemon.getImageUrl() })
+                }
             }
         } else {
             onError(pokemonResponse.message())
