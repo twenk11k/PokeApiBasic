@@ -23,6 +23,7 @@
             android:layout_gravity="center"
             android:padding="@dimen/padding_default"
             android:text="@{data.type.name}"
+            android:textSize="@dimen/text_size_default"
             tools:text="Flying" />
 
     </androidx.cardview.widget.CardView>
