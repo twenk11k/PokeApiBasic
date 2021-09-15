@@ -15,10 +15,6 @@ class MainActivity : DataBindingActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setBindings()
-    }
-
-    private fun setBindings() {
         binding.apply {
             vm = mainViewModel
             lifecycleOwner = this@MainActivity
