@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val mainRepository: MainRepository) :  ViewModel() {
+class MainViewModel @Inject constructor(private val mainRepository: MainRepository) : ViewModel() {
 
     private var pokemonInfoLiveData: LiveData<PokemonInfo?>
 
