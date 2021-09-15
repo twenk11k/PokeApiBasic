@@ -2,5 +2,6 @@
 <resources>
     <dimen name="margin_default">16dp</dimen>
     <dimen name="padding_default">16dp</dimen>
+    <dimen name="text_size_default">18sp</dimen>
     <dimen name="card_view_corner_radius">20dp</dimen>
 </resources>
