@@ -12,10 +12,10 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val mainRepository: MainRepository) : ViewModel() {
 
-    private var pokemonInfoLiveData: LiveData<PokemonInfo?>
+    var pokemonInfoLiveData: LiveData<PokemonInfo?>
 
-    private val isLoading = ObservableBoolean(false)
-    private val toastMessage = ObservableField<String>()
+    val isLoading = ObservableBoolean(false)
+    val toastMessage = ObservableField<String>()
 
     private val loadTrigger = MutableLiveData(Unit)
 
@@ -28,8 +28,6 @@ class MainViewModel @Inject constructor(private val mainRepository: MainReposito
             ).asLiveData(viewModelScope.coroutineContext + Dispatchers.IO)
         }
     }
-
-    fun getPokemonInfoLiveData() = pokemonInfoLiveData
 
     fun refresh() {
         loadTrigger.value = Unit
