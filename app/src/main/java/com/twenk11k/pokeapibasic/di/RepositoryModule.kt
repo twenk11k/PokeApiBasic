@@ -1,7 +1,7 @@
 package com.twenk11k.pokeapibasic.di
 
-import com.twenk11k.pokeapibasic.network.PokeService
-import com.twenk11k.pokeapibasic.repository.MainRepository
+import com.twenk11k.pokeapibasic.data.network.PokeService
+import com.twenk11k.pokeapibasic.data.repository.MainRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,7 +1,7 @@
-package com.twenk11k.pokeapibasic.repository
+package com.twenk11k.pokeapibasic.data.repository
 
 import androidx.annotation.WorkerThread
-import com.twenk11k.pokeapibasic.network.PokeService
+import com.twenk11k.pokeapibasic.data.network.PokeService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn

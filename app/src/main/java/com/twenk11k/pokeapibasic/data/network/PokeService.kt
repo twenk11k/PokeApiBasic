@@ -1,7 +1,7 @@
-package com.twenk11k.pokeapibasic.network
+package com.twenk11k.pokeapibasic.data.network
 
-import com.twenk11k.pokeapibasic.model.PokemonInfo
-import com.twenk11k.pokeapibasic.model.PokemonResponse
+import com.twenk11k.pokeapibasic.data.model.PokemonInfo
+import com.twenk11k.pokeapibasic.data.model.PokemonResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

@@ -3,8 +3,8 @@ package com.twenk11k.pokeapibasic.ui
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.*
-import com.twenk11k.pokeapibasic.model.PokemonInfo
-import com.twenk11k.pokeapibasic.repository.MainRepository
+import com.twenk11k.pokeapibasic.data.model.PokemonInfo
+import com.twenk11k.pokeapibasic.data.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject

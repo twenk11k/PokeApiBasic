@@ -1,4 +1,4 @@
-package com.twenk11k.pokeapibasic.model
+package com.twenk11k.pokeapibasic.data.model
 
 import com.google.gson.annotations.SerializedName
 
