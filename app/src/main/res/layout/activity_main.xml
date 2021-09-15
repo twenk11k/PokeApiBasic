@@ -13,6 +13,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.MainActivity" />
+        tools:context=".ui.MainActivity">
+
+        <ImageView
+            android:id="@+id/img_pokemon"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:gone="@{vm.isLoading}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadImage="@{vm.pokemonInfoLiveData.imageUrl}"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
