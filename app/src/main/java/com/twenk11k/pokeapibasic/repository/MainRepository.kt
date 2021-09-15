@@ -19,17 +19,19 @@ class MainRepository @Inject constructor(
         onStart: () -> Unit,
         onComplete: () -> Unit, onError: (String?) -> Unit
     ) = flow {
-        val pokemonResponse = pokeService.fetchPokemonResponse()
-        if (pokemonResponse.isSuccessful) {
-            pokemonResponse.body()?.results?.let {
-                val randomPokemon = it[Random.nextInt(it.size)]
-                val pokemonInfo = pokeService.fetchPokemonInfo(randomPokemon.name)
-                if (pokemonInfo.isSuccessful) {
-                    emit(pokemonInfo.body()?.apply { imageUrl = randomPokemon.getImageUrl() })
+        try {
+            val pokemonResponse = pokeService.fetchPokemonResponse()
+            if (pokemonResponse.isSuccessful) {
+                pokemonResponse.body()?.results?.let {
+                    val randomPokemon = it[Random.nextInt(it.size)]
+                    val pokemonInfo = pokeService.fetchPokemonInfo(randomPokemon.name)
+                    if (pokemonInfo.isSuccessful) {
+                        emit(pokemonInfo.body()?.apply { imageUrl = randomPokemon.getImageUrl() })
+                    }
                 }
             }
-        } else {
-            onError(pokemonResponse.message())
+        } catch (e: Exception) {
+            onError(e.message)
         }
     }.onStart { onStart() }.onCompletion { onComplete() }.flowOn(Dispatchers.IO)
 
