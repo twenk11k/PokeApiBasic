@@ -19,8 +19,10 @@ class MainActivity : DataBindingActivity() {
     }
 
     private fun setBindings() {
-        binding.vm = mainViewModel
-        binding.lifecycleOwner = this@MainActivity
+        binding.apply {
+            vm = mainViewModel
+            lifecycleOwner = this@MainActivity
+        }
     }
 
 }
